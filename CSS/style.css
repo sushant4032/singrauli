@@ -1,0 +1,98 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+html{
+font-family: Verdana;
+font-size:16px;
+}
+
+body{
+    /* background:red; */
+    padding:5px;
+}
+
+header, footer{
+    height:50px;
+    background:purple;
+    color:white;
+    font-weight: bold;
+    font-size:1.5rem;
+    border-radius:10px 10px 0px 0px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.date-selector{
+    height:50px;
+    background:yellow;
+    border:1px solid lightgrey;
+    display:flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.date{
+    display: flex;
+    align-items: center;
+}
+
+.prev, .next{
+    width:80px;
+}
+.card {
+    border : 1px solid lightgrey;
+    margin:10px 2px;
+    color:#444;
+    background:rgb(240,240,240);
+    border-radius: 5px;;
+}
+
+.card > div{
+padding:5px;
+}
+
+.centr{
+    background:rgb(215, 236, 215);
+}
+
+.info{
+    display:flex;
+    justify-content: space-between;
+}
+
+.type{
+    font-size:1.25rem;
+    padding:5px;
+    font-weight: 800;
+    color:brown;
+}
+
+.age{
+      font-size:1.25rem;
+    padding:5px;
+    font-weight: 800;
+    color:brown;
+}
+
+.avl{
+    padding:5px;
+    font-weight: bold;
+    background:rgb(243, 243, 156);
+    border:1px solid grey;
+    border-radius:2px;
+}
+
+.first, .second{
+    padding:2px;
+    
+}
+
+/* .avl{ 
+    font-weight: bold;
+    background:RGB(76, 176, 80);
+    color:white;
+    border:1px solid lightgrey;
+} */

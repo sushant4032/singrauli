@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="JS/main.js" defer></script>
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <p>Singrauli Vaccine Tracker</p>
+    </header>
+
+    <section class="date-selector">
+        <button class="prev"> prev </button>
+        <div class="date"></div>
+        <button class="next"> next </button>
+    </section>
+    <main>
+        <div class="cont">
+        </div>
+    </main>
+    <footer>
+        Developed by : Sushant Tiwari
+    </footer>
+
+</body>
+<template id="tcard">
+
+    <div class="card">
+        <div class="centr">
+            <h3 class="name"></h3>
+            <p class="add"></p>
+        </div>
+        <div class="info">
+            <p class="type"></p>
+            <p class="age"></p>
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <td>Dose 1 available:</td>
+                    <td class="first">50</td>
+                </tr>
+                <tr>
+                    <td>Dose 2 available:</td>
+                    <td class="second">20</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</template>
+
+</html>
