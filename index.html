@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="JS/main.js" defer></script>
     <link rel="stylesheet" href="CSS/style.css">
-    <title>Document</title>
+    <title>Vaccine</title>
 </head>
 
 <body>
@@ -16,16 +16,29 @@
     </header>
 
     <section class="date-selector">
-        <button class="prev"> prev </button>
+        <div class="prev">prev</div>
         <div class="date"></div>
-        <button class="next"> next </button>
+        <div class="next">next</div>
     </section>
+
+    <section class="filter">
+        <P>Filters : </P>
+        <p class="plus18">18+</p>
+        <p class="covaxin">COVAXIN</p>
+    </section>
+
     <main>
+        <div class="nodata hidden">
+            NOT AVAILABLE !
+        </div>
         <div class="cont">
         </div>
     </main>
     <footer>
-        Developed by : Sushant Tiwari
+        <p  class="data-source">Live vaccine status data is coming directly from government servers.</p>
+        </hr>
+        <p class="copy">Developer &copy; Sushant Tiwari, 2021</p>
+        <p class="contact">cil.sushant@gmail.com</p>
     </footer>
 
 </body>
