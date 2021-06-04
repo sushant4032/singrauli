@@ -144,26 +144,38 @@ function display() {
                 }
             }
         })
-        show();
+        showdata();
     }
     else {
-
-
+        showempty();
     }
     document.querySelector('.covrow').innerHTML = `<td>COVISHIELD</td><td> ${td.cov.a18.d1} / ${td.cov.a18.d2}<td>${td.cov.a45.d1} / ${td.cov.a45.d2}`;
     document.querySelector('.coxrow').innerHTML = `<td>COVAXIN</td><td> ${td.cox.a18.d1} / ${td.cox.a18.d2}<td>${td.cox.a45.d1} / ${td.cox.a45.d2}`;
 }
 
 function erase() {
+    var fetching = document.querySelector('.fetching');
     var ndata = document.querySelector('.nodata');
     var ydata = document.querySelector('.data');
     ndata.classList.add('hidden');
     ydata.classList.add('hidden');
+    fetching.classList.remove('hidden');
 }
 
-function show() {
+function showdata() {
+    var nonet = document.querySelector('.fetching');
     var ndata = document.querySelector('.nodata');
     var ydata = document.querySelector('.data');
     ndata.classList.add('hidden');
     ydata.classList.remove('hidden');
+    nonet.classList.add('hidden');
+}
+
+function showempty() {
+    var nonet = document.querySelector('.fetching');
+    var ndata = document.querySelector('.nodata');
+    var ydata = document.querySelector('.data');
+    ndata.classList.remove('hidden');
+    ydata.classList.add('hidden');
+    nonet.classList.add('hidden');
 }
