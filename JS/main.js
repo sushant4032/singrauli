@@ -1,18 +1,15 @@
 
-
-
 var tem = document.querySelector('#tcard');
 var clone = tem.content.cloneNode(true);
-var nodata = document.querySelector('.nodata');
 var cont = document.querySelector('.cont');
 var fdate = document.querySelector('.date');
 var gdata = "";
-console.dir(fdate);
 var today = new Date();
 var date = today;
 
 var plus18 = false;
 var covaxin = false;
+
 
 var btn_plus18 = document.querySelector('.plus18');
 btn_plus18.addEventListener('click', e => {
@@ -43,7 +40,7 @@ document.querySelector('.next').addEventListener('click', e => {
 
 
 function update() {
-
+    erase();
     var d = date.getDate().toString().padStart(2, 0);
     var m = (date.getMonth() + 1).toString().padStart(2, 0);
     var y = date.getFullYear();
@@ -54,20 +51,26 @@ function update() {
     console.log(str);
     fetch(str)
         .then(response => response.json())
-        .then(data => myf(data));
+        .then(data => {
+            gdata = data;
+            display();
+        });
 }
 
-
-
-
-function myf(data) {
-    gdata = data;
-    display();
-}
 
 function display() {
+
+    var td = {
+        cov: {
+            a18: { d1: 0, d2: 0 },
+            a45: { d1: 0, d2: 0 }
+        },
+        cox: {
+            a18: { d1: 0, d2: 0 },
+            a45: { d1: 0, d2: 0 }
+        },
+    };
     cont.innerHTML = "";
-    nodata.classList.remove('hidden');
 
     // console.log(typeof (data));
     // console.log(data);
@@ -82,25 +85,25 @@ function display() {
     }
     if (covaxin) {
         var t = d.filter(x => {
-            return x.caccine == 'covaxin';
+            return x.vaccine == 'COVAXIN';
         })
         d = t;
     }
 
-    var t =d.sort(function(a,b){
+    var t = d.sort(function (a, b) {
         return b.available_capacity - a.available_capacity;
     });
     d = t;
 
-    if (d.length) {
-        nodata.classList.add('hidden');
+
+    if (d.length > 0) {
         d.forEach(e => {
             // console.log(e);
             var clone = tem.content.cloneNode(true);
             clone.querySelector('.name').innerText = e.address;
             clone.querySelector('.add').innerText = e.block_name + ", " + e.district_name + ", " + e.pincode;
             clone.querySelector('.type').innerText = e.vaccine;
-            clone.querySelector('.age').innerText = e.min_age_limit + "+";
+            clone.querySelector('.age').innerText = "age " + e.min_age_limit + "+";
 
             var first = clone.querySelector('.first');
             first.innerText = e.available_capacity_dose1;
@@ -116,9 +119,51 @@ function display() {
             clone.querySelector('.second').innerText = e.available_capacity_dose2;
 
             var k = cont.appendChild(clone);
+
+
+            if (e.vaccine == 'COVISHIELD') {
+
+                if (e.min_age_limit == 18) {
+
+                    td.cov.a18.d1 += e.available_capacity_dose1;
+                    td.cov.a18.d2 += e.available_capacity_dose2;
+                }
+                else {
+                    td.cov.a45.d1 += e.available_capacity_dose1;
+                    td.cov.a45.d2 += e.available_capacity_dose2;
+                }
+            }
+            else {
+                if (e.min_age_limit == 18) {
+                    td.cox.a18.d1 += e.available_capacity_dose1;
+                    td.cox.a18.d2 += e.available_capacity_dose2;
+                }
+                else {
+                    td.cox.a45.d1 += e.available_capacity_dose1;
+                    td.cox.a45.d2 += e.available_capacity_dose2;
+                }
+            }
         })
+        show();
     }
     else {
-        
+
+
     }
+    document.querySelector('.covrow').innerHTML = `<td>COVISHIELD</td><td> ${td.cov.a18.d1} / ${td.cov.a18.d2}<td>${td.cov.a45.d1} / ${td.cov.a45.d2}`;
+    document.querySelector('.coxrow').innerHTML = `<td>COVAXIN</td><td> ${td.cox.a18.d1} / ${td.cox.a18.d2}<td>${td.cox.a45.d1} / ${td.cox.a45.d2}`;
+}
+
+function erase() {
+    var ndata = document.querySelector('.nodata');
+    var ydata = document.querySelector('.data');
+    ndata.classList.add('hidden');
+    ydata.classList.add('hidden');
+}
+
+function show() {
+    var ndata = document.querySelector('.nodata');
+    var ydata = document.querySelector('.data');
+    ndata.classList.add('hidden');
+    ydata.classList.remove('hidden');
 }

@@ -14,28 +14,49 @@
     <header>
         <p>Singrauli Vaccine Tracker</p>
     </header>
-
-    <section class="date-selector">
-        <div class="prev">prev</div>
-        <div class="date"></div>
-        <div class="next">next</div>
-    </section>
-
-    <section class="filter">
-        <P>Filters : </P>
-        <p class="plus18">18+</p>
-        <p class="covaxin">COVAXIN</p>
-    </section>
-
+    <div class="controls">
+        <section class="date-selector">
+            <div class="prev">-</div>
+            <div class="date"></div>
+            <div class="next">+</div>
+        </section>
+        <section class="filter">
+            <P>Filters : </P>
+            <p class="plus18">18+</p>
+            <p class="covaxin">COVAXIN</p>
+        </section>
+    </div>
     <main>
-        <div class="nodata hidden">
-            NOT AVAILABLE !
+        <div class="nodata">
+            DATA NOT AVAILABLE !
         </div>
-        <div class="cont">
-        </div>
+        <section class="data">
+            <div class="tabl">
+                <table>
+
+                    <tr>
+                        <td>dose-1 / dose-2</td>
+                        <td>18+ age</td>
+                        <td>45+ age</td>
+                    </tr>
+                    <tr class="covrow">
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="coxrow">
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+
+            </div>
+            <div class="cont">
+
+            </div>
+        </section>
     </main>
     <footer>
-        <p  class="data-source">Live vaccine status data is coming directly from government servers.</p>
+        <p class="data-source">Realtime data is from the Cowin server</p>
         </hr>
         <p class="copy">Developer &copy; Sushant Tiwari, 2021</p>
         <p class="contact">cil.sushant@gmail.com</p>
@@ -56,11 +77,11 @@
         <div>
             <table>
                 <tr>
-                    <td>Dose 1 available:</td>
+                    <td>Dose 1</td>
                     <td class="first">50</td>
                 </tr>
                 <tr>
-                    <td>Dose 2 available:</td>
+                    <td>Dose 2</td>
                     <td class="second">20</td>
                 </tr>
             </table>

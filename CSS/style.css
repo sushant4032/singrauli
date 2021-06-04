@@ -1,6 +1,8 @@
 * {
 	margin: 0;
 	padding: 0;
+	user-select: none;
+		 
 }
 
 html {
@@ -10,8 +12,10 @@ html {
 
 body {
 	/* background:red; */
-	padding: 5px;
+	padding: 2px;
 	color: #666;
+	max-width: 1200px;
+	margin: auto;
 }
 
 header {
@@ -24,28 +28,30 @@ header {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	/* box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%); */
 }
 
-main{
-    min-height: 50vh;
+main {
+	min-height: 60vh;
 }
 footer {
 	height: 150px;
-    padding:20px;
+	padding: 20px;
 	background: purple;
 	color: white;
 	border-radius: 0px 0px 10px 10px;
 	display: flex;
-    flex-direction: column;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
 }
-footer > p{
-    text-align: center;
+footer > p {
+	text-align: center;
 }
 
 .date-selector {
-    height: 50px;
+	height: 50px;
 	border-radius: 25px;
 	margin: 20px;
 	font-size: 1.5rem;
@@ -53,23 +59,24 @@ footer > p{
 	border: 1px solid lightgrey;
 	display: flex;
 	justify-content: space-between;
-    overflow: hidden;
-
+	overflow: hidden;
+	box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
 }
 
-.date-selector > div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.date-selector > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
-
 
 .prev,
 .next {
-	width: 80px;
-    cursor: pointer;
-    background:#eee;
-   
+	width: 60px;
+	font-size: 2rem;
+	font-weight: bold;
+	cursor: pointer;
+	background: rgb(241, 241, 241);
+	color: #444;
 }
 
 .filter {
@@ -77,37 +84,95 @@ footer > p{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-
 }
 
-.plus18, .covaxin{
-    width:80px;
-    margin:10px;
-    padding:5px;
-    border:1px solid lightgrey;
-    border-radius:25px;
-    text-align: center;
-    cursor: pointer;
+.plus18,
+.covaxin {
+	width: 80px;
+	margin: 10px;
+	padding: 12px;
+	border: 1px solid lightgrey;
+	border-radius: 5px;
+	overflow: hidden;
+	text-align: center;
+	cursor: pointer;
+	box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
 }
 
 .set {
-    background:yellow;
+	background: yellow;
+}
+
+.data{
+	transition: all 2s ease-in-out;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+.tabl {
+	padding: 20px 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.tabl table {
+	width: 100%;
+}
+
+.tabl td {
+	padding: 10px 20px;
+	border: 1px solid rgb(220, 220, 220);
+	text-align: center;
+}
+
+.tabl tr:nth-child(odd) {
+	background: rgb(241, 241, 241);
+}
+
+.tabl tr:first-child {
+	text-align: center;
+	font-weight: bold;
+	background: RGB(76, 176, 80);
+	color: white;
+}
+
+.cont {
+	padding: 5px;
+	transition: height .5s ease;
 }
 
 .card {
 	border: 1px solid lightgrey;
-	margin: 10px 2px;
+	width: 100%;
+	margin-bottom: 20px;
 	color: #444;
-	background: rgb(240, 240, 240);
 	border-radius: 5px;
+	overflow: hidden;
+	/* box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%); */
 }
 
 .card > div {
 	padding: 5px;
 }
 
+.card td {
+	border: 1px solid rgb(220, 220, 220);
+	padding: 5px;
+	min-width: 30px;
+	text-align: center;
+}
 .centr {
-	background: rgb(215, 236, 215);
+	background: RGB(0, 151, 136);
+	color: white;
+}
+.add {
+	font-size: 0.8rem;
+	color: lightgrey;
 }
 
 .info {
@@ -130,44 +195,42 @@ footer > p{
 }
 
 .avl {
-	padding: 5px;
 	font-weight: bold;
-	background: rgb(243, 243, 156);
-	border: 1px solid grey;
-	border-radius: 2px;
+	background: yellow;
 }
 
-.first,
-.second {
-	padding: 2px;
+.data-source {
+	padding: 10px;
+	font-size: 1rem;
 }
 
-.data-source{
-    padding:10px;
-    font-size:0.75rem;
+.copy {
+	border-top: 1px solid grey;
+	padding: 10px;
+	width: 80%;
+	font-size: 0.9rem;
 }
 
-.copy{
-    border-top:1px solid grey;
-    padding-top:10px;
-    width:80%;
+.contact {
+	font-size: 0.75rem;
+}
+.nodata {
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.5rem;
+	font-weight: bold;
 }
 
-.contact{
-    font-size:0.75rem;
-  
-}
-.nodata{
-    height:100px;
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    font-size:1.5rem;
-    font-weight: bold;
+.hidden {
+	display: none;
 }
 
-.hidden{
-    display:none;
+.collapsed {
+	height: 0px;
+	overflow: hidden;
+	 transition: all 5s ease-in-out;
 }
 
 /* .avl{ 

@@ -1,0 +1,2 @@
+document.querySelector('.covrow').innerHTML = `<td>COVISHIELD</td><td> <p>Dose 1:${td.cov.a18.d1}</p><p>Dose 2:${td.cov.a18.d2}</p> <td> <p>Dose 1:${td.cov.a45.d1}</p><p>Dose 2:${td.cov.a45.d2}</p> `;
+document.querySelector('.coxrow').innerHTML = `<td>COVISHIELD</td><td> <p>Dose 1:${td.cox.a18.d1}</p><p>Dose 2:${td.cox.a18.d2}</p> <td> <p>Dose 1:${td.cox.a45.d1}</p><p>Dose 2:${td.cox.a45.d2}</p> `;
