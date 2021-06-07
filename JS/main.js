@@ -55,20 +55,22 @@ function applyFilter(f) {
 }
 
 update();
+getData();
+
 // date.setDate(date.getDate() - 5);
 
 document.querySelector('.prev').addEventListener('click', e => {
     date.setDate(date.getDate() - 1);
-    update();
+    getData();
 })
 
 document.querySelector('.next').addEventListener('click', e => {
     date.setDate(date.getDate() + 1);
-    update();
+    getData();
 })
 
 
-function update() {
+function getData() {
     nodata('LOADING...');
     var d = date.getDate().toString().padStart(2, 0);
     var m = (date.getMonth() + 1).toString().padStart(2, 0);
@@ -209,4 +211,15 @@ function nodata(text) {
     data.classList.add('hidden');
     nodata.classList.remove('hidden');
     nodata.querySelector('p').innerText = text;
+}
+
+function update() {
+    var diff = Math.floor((new Date().getTime() - localStorage.getItem('lastUpdate')) / (24 * 3600 * 1000));
+    console.log(diff);
+    var k = window.location;
+    console.dir(k);
+
+    if (diff > 1) {
+        
+    }
 }
