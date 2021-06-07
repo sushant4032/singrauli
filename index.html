@@ -11,60 +11,65 @@
 </head>
 
 <body>
-    <header>
-        <p>Singrauli Vaccine Tracker</p>
-    </header>
-    <div class="controls">
-        <section class="date-selector">
-            <div class="prev">-</div>
-            <div class="date"></div>
-            <div class="next">+</div>
-        </section>
-        <section class="filter">
-            <P>Filters : </P>
-            <p class="plus18">18+</p>
-            <p class="covaxin">COVAXIN</p>
-        </section>
+    <div class="frame">
+
+
+        <header>
+            <p>Singrauli Vaccine Tracker</p>
+        </header>
+        <div class="controls">
+            <section class="date-selector">
+                <div class="prev">-</div>
+                <div class="date"></div>
+                <div class="next">+</div>
+            </section>
+            <section class="filter">
+                    <p class="plus18" data-key="plus18">18+</p>
+                    <p class="coxonly" data-key="coxonly">COVAXIN </p>
+                    <p class="plus45" data-key="plus45">45+</p>
+                    <p class="covonly" data-key="covonly">COVISHIELD</p>
+           
+            </section>
+        </div>
+        <main>
+            <div class="nodata">
+                <p>NO NOTHING!</p>
+            </div>
+            <section class="data">
+                <div class="tabl">
+                    <table>
+                        <tr>
+                            <th colspan=3> TOTAL DOSES (D1/D2)</th>
+                        </tr>
+
+                        <tr>
+                            <th></th>
+                            <th>18+ age</th>
+                            <th>45+ age</th>
+                        </tr>
+                        <tr class="covrow">
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="coxrow">
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+
+                </div>
+                <div class="cont">
+
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p class="data-source">Realtime data is from the Cowin server</p>
+            </hr>
+            <p class="copy">Developer &copy; Sushant Tiwari, 2021</p>
+            <p class="contact">cil.sushant@gmail.com</p>
+        </footer>
     </div>
-    <main>
-        <div class="nodata">
-            NOT AVAILABLE !
-        </div>
-        <div class="fetching">
-            FETCHING DATA ...
-        </div>
-        <section class="data">
-            <div class="tabl">
-                <table>
-
-                    <tr>
-                        <td>dose-1 / dose-2</td>
-                        <td>18+ age</td>
-                        <td>45+ age</td>
-                    </tr>
-                    <tr class="covrow">
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr class="coxrow">
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </table>
-
-            </div>
-            <div class="cont">
-
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p class="data-source">Realtime data is from the Cowin server</p>
-        </hr>
-        <p class="copy">Developer &copy; Sushant Tiwari, 2021</p>
-        <p class="contact">cil.sushant@gmail.com</p>
-    </footer>
-
 </body>
 <template id="tcard">
 
