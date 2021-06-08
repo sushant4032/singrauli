@@ -226,7 +226,7 @@ th {
 	border-bottom: 1px solid lightgray;
 }
 
-/* .card-plus45.card-COVISHIELD .centr {
+.card-plus45.card-COVISHIELD .centr {
 	background: #4cb050;
 }
 
@@ -238,7 +238,7 @@ th {
 }
 .card-plus18.card-COVAXIN .centr {
 	background: #fe5722;
-} */
+}
 
 .add {
 	font-size: 0.8rem;
