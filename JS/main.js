@@ -71,7 +71,7 @@ document.querySelector('.next').addEventListener('click', e => {
 
 
 function getData() {
-    nodata('LOADING...');
+    nodata('FETCHING DATA...');
     var d = date.getDate().toString().padStart(2, 0);
     var m = (date.getMonth() + 1).toString().padStart(2, 0);
     var y = date.getFullYear();
@@ -90,7 +90,7 @@ function getData() {
 
 
 function refresh() {
-  
+
     cont.innerHTML = "";
     var data = gdata;
     var d = data.sessions;
@@ -146,6 +146,9 @@ function display(d) {
             clone.querySelector('.add').innerText = e.block_name + ", " + e.district_name + ", " + e.pincode;
             clone.querySelector('.type').innerText = e.vaccine;
             clone.querySelector('.age').innerText = "age " + e.min_age_limit + "+";
+            var card = clone.querySelector('.card');
+            card.classList.add('card-plus' + e.min_age_limit);
+            card.classList.add("card-" + e.vaccine);
 
             var first = clone.querySelector('.first');
             first.innerText = e.available_capacity_dose1;
@@ -191,10 +194,21 @@ function display(d) {
         showdata();
     }
     else {
-        nodata("NO RESULTS !");
+
+
+        if (filters.covonly || filters.coxonly || filters.plus18 || filters.plus45) {
+            nodata("NO SLOTS !");
+        }
+        else if (date.getTime() < new Date().getTime()) {
+            nodata("DATA EXPIRED !");
+        }
+        else {
+            nodata("DATA NOT RELEASED YET !");
+        }
     }
-    document.querySelector('.covrow').innerHTML = `<td>COVISHIELD</td><td> ${td.cov.a18.d1} / ${td.cov.a18.d2}<td>${td.cov.a45.d1} / ${td.cov.a45.d2}`;
-    document.querySelector('.coxrow').innerHTML = `<td>COVAXIN</td><td> ${td.cox.a18.d1} / ${td.cox.a18.d2}<td>${td.cox.a45.d1} / ${td.cox.a45.d2}`;
+
+    // document.querySelector('.covrow').innerHTML = `<td>COVISHIELD</td><td> ${td.cov.a18.d1} / ${td.cov.a18.d2}<td>${td.cov.a45.d1} / ${td.cov.a45.d2}`;
+    // document.querySelector('.coxrow').innerHTML = `<td>COVAXIN</td><td> ${td.cox.a18.d1} / ${td.cox.a18.d2}<td>${td.cox.a45.d1} / ${td.cox.a45.d2}`;
 }
 
 
@@ -217,9 +231,8 @@ function update() {
     var diff = Math.floor((new Date().getTime() - localStorage.getItem('lastUpdate')) / (24 * 3600 * 1000));
     console.log(diff);
     var k = window.location;
-    console.dir(k);
 
     if (diff > 1) {
-        
+
     }
 }

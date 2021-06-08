@@ -18,15 +18,15 @@ body {
 	margin: auto;
 }
 
-.frame{
+.frame {
 	/* background:yellow; */
-	min-height:100vh;
+	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 }
 header {
 	height: 70px;
-	margin-bottom:20px;
+	margin-bottom: 20px;
 	background: purple;
 	color: white;
 	font-weight: bold;
@@ -37,19 +37,19 @@ header {
 	align-items: center;
 	box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
 }
-.controls{
+.controls {
 	/* background:yellow; */
-	margin-bottom:10px;
+	margin-bottom: 10px;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
 
 main {
-	flex-grow:1;
+	flex-grow: 1;
 }
 footer {
-	height: 150px;
+	/* height: 150px; */
 	padding: 20px;
 	background: purple;
 	color: white;
@@ -59,6 +59,7 @@ footer {
 	justify-content: center;
 	align-items: center;
 	box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+	position: relative;
 }
 footer > p {
 	text-align: center;
@@ -66,8 +67,8 @@ footer > p {
 
 .date-selector {
 	height: 50px;
-	max-width:300px;
-	margin:0px auto;
+	max-width: 300px;
+	margin: 0px auto;
 	border-radius: 25px;
 	margin-bottom: 20px;
 	font-size: 1.5rem;
@@ -105,17 +106,17 @@ footer > p {
 	align-items: center;
 }
 
-.filter fieldset{
-	width:100%;
-	padding:10px;
+.filter fieldset {
+	width: 100%;
+	padding: 10px;
 	display: flex;
 }
 
 .filter p {
 	/* min-width: 80px; */
 	display: block;
-	margin:5px;
-	padding:12px;
+	margin: 5px;
+	padding: 12px;
 	border: 1px solid lightgrey;
 	border-radius: 5px;
 	overflow: hidden;
@@ -137,13 +138,12 @@ table {
 }
 
 .tabl {
-
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	border-radius: 10px;
 	overflow: hidden;
-	margin-bottom:20px;
+	margin-bottom: 20px;
 }
 
 .tabl table {
@@ -182,42 +182,63 @@ th {
 
 .card {
 	border: 1px solid lightgrey;
-	width: 100%;
-	margin-bottom: 20px;
-	color: #444;
+	/* width: 100%; */
+	margin: 30px 10px;
+	color: #777;
+	font-weight: bold;
 	border-radius: 5px;
 	overflow: hidden;
-	/* box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%); */
-	background: rgb(235,235,235);
+	box-shadow: 0 4px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+	/* background: rgb(235, 235, 235); */
 	/* background:rgb(241,241,241); */
-	border:1px solid rgb(0,151,136)
+	/* border: 1px solid rgb(0, 151, 136); */
+	/* background:RGB(63, 81, 181); */
+	/* color: white; */
+	/* background:#9c28b1; */
 }
 
 .card > div {
 	padding: 5px;
 }
 
-.card .info{
+.card .info {
 	display: flex;
 	justify-content: space-between;
+	color: crimson;
 	/* background:rgb(230,230,230); */
 }
 
+.card table {
+	border-radius: 3px;
+	overflow: hidden;
+}
+
 .card td {
-	border: 1px solid rgb(220, 220, 220);
+	border: 1px solid rgba(220, 220, 220, 0.8);
 	padding: 5px;
 	min-width: 30px;
 	text-align: center;
+	/* background: rgba(255, 255, 255, 0.1); */
 }
 .centr {
-	background: #999;
-	background: rgb(0, 151, 136);
 	color: white;
+	background: rgba(255, 255, 255, 0.1);
 }
 
-.green .centr {
-	/* background: rgb(76, 176, 80); */
+.card-plus45.card-COVISHIELD .centr {
+	background: #4cb050;
 }
+
+.card-plus45.card-COVAXIN .centr {
+	background: #2196f3;
+}
+.card-plus18.card-COVISHIELD .centr {
+	background: #3f51b5;
+}
+.card-plus18.card-COVAXIN .centr {
+	background: #fe5722;
+}
+
 .add {
 	font-size: 0.8rem;
 	color: lightgrey;
@@ -231,22 +252,21 @@ th {
 	font-size: 1.5rem;
 	font-weight: bold;
 	color: crimson;
-	transition: all 2s ease-in-out; 
-
+	transition: all 2s ease-in-out;
 }
 
 .type {
 	font-size: 1.25rem;
 	padding: 5px;
 	font-weight: 800;
-	color: brown;
+	/* color: brown; */
 }
 
 .age {
 	font-size: 1.25rem;
 	padding: 5px;
 	font-weight: 800;
-	color: brown;
+	/* color: brown; */
 }
 
 .avl {
@@ -289,6 +309,8 @@ th {
 	transition: all 5s ease-in-out;
 }
 
+.visit-counter {
+}
 /* .avl{ 
     font-weight: bold;
     background:RGB(76, 176, 80);
