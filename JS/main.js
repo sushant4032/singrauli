@@ -127,16 +127,16 @@ function refresh() {
 }
 
 function display(d) {
-    var td = {
-        cov: {
-            a18: { d1: 0, d2: 0 },
-            a45: { d1: 0, d2: 0 }
-        },
-        cox: {
-            a18: { d1: 0, d2: 0 },
-            a45: { d1: 0, d2: 0 }
-        },
-    };
+    // var td = {
+    //     cov: {
+    //         a18: { d1: 0, d2: 0 },
+    //         a45: { d1: 0, d2: 0 }
+    //     },
+    //     cox: {
+    //         a18: { d1: 0, d2: 0 },
+    //         a45: { d1: 0, d2: 0 }
+    //     },
+    // };
 
     if (d.length > 0) {
         d.forEach(e => {
@@ -169,27 +169,30 @@ function display(d) {
             }
 
             var k = cont.appendChild(clone);
-            if (e.vaccine == 'COVISHIELD') {
-                if (e.min_age_limit == 18) {
 
-                    td.cov.a18.d1 += e.available_capacity_dose1;
-                    td.cov.a18.d2 += e.available_capacity_dose2;
-                }
-                else {
-                    td.cov.a45.d1 += e.available_capacity_dose1;
-                    td.cov.a45.d2 += e.available_capacity_dose2;
-                }
-            }
-            else {
-                if (e.min_age_limit == 18) {
-                    td.cox.a18.d1 += e.available_capacity_dose1;
-                    td.cox.a18.d2 += e.available_capacity_dose2;
-                }
-                else {
-                    td.cox.a45.d1 += e.available_capacity_dose1;
-                    td.cox.a45.d2 += e.available_capacity_dose2;
-                }
-            }
+
+
+            // if (e.vaccine == 'COVISHIELD') {
+            //     if (e.min_age_limit == 18) {
+
+            //         td.cov.a18.d1 += e.available_capacity_dose1;
+            //         td.cov.a18.d2 += e.available_capacity_dose2;
+            //     }
+            //     else {
+            //         td.cov.a45.d1 += e.available_capacity_dose1;
+            //         td.cov.a45.d2 += e.available_capacity_dose2;
+            //     }
+            // }
+            // else {
+            //     if (e.min_age_limit == 18) {
+            //         td.cox.a18.d1 += e.available_capacity_dose1;
+            //         td.cox.a18.d2 += e.available_capacity_dose2;
+            //     }
+            //     else {
+            //         td.cox.a45.d1 += e.available_capacity_dose1;
+            //         td.cox.a45.d2 += e.available_capacity_dose2;
+            //     }
+            // }
         })
         showdata();
     }
@@ -207,8 +210,8 @@ function display(d) {
         }
     }
 
-    document.querySelector('.covrow').innerHTML = `<td>COVISHIELD</td><td> ${td.cov.a18.d1} / ${td.cov.a18.d2}<td>${td.cov.a45.d1} / ${td.cov.a45.d2}`;
-    document.querySelector('.coxrow').innerHTML = `<td>COVAXIN</td><td> ${td.cox.a18.d1} / ${td.cox.a18.d2}<td>${td.cox.a45.d1} / ${td.cox.a45.d2}`;
+    // document.querySelector('.covrow').innerHTML = `<td>COVISHIELD</td><td> ${td.cov.a18.d1} / ${td.cov.a18.d2}<td>${td.cov.a45.d1} / ${td.cov.a45.d2}`;
+    // document.querySelector('.coxrow').innerHTML = `<td>COVAXIN</td><td> ${td.cox.a18.d1} / ${td.cox.a18.d2}<td>${td.cox.a45.d1} / ${td.cox.a45.d2}`;
 }
 
 
