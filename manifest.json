@@ -3,9 +3,9 @@
     "name": "Simple Installable App",
     "icons": [
         {
-            "src": "favicon.ico",
+            "src": "logo64.png",
             "sizes": "64x64",
-            "type": "image/x-icon"
+              "type": "image/png"
         },
       
         {
@@ -14,7 +14,7 @@
             "sizes": "512x512"
         }
     ],
-    "start_url": ".",
+    "start_url": "/",
     "display": "standalone",
     "theme_color": "#000000",
     "background_color": "#ffffff"

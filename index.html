@@ -8,24 +8,11 @@
     <script src="JS/main.js?v5" defer></script>
     <link rel="stylesheet" href="CSS/style.css?v5">
     <title>Singrauli</title>
-   
+    <link rel="manifest" href="manifest.json">
 
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListiner('load', () => {
-                navigator.serviceWorker.register('sw.js')
-                    .then((registration) => {
-                        console.log(`service worker registered succesfully ${registration}`)
-                    })
-                    .catch((err) => {
-                        console.log(`Error registring ${err}`)
-                    })
-            })
-        } else {
-            console.log(`Service worker is not supported in this browser.`)
-        }
-    </script>
-    <link rel="manifest" href="manifest.json?v5" />
+
+
+
 
 
 </head>
@@ -56,7 +43,7 @@
                 <p>NO NOTHING!</p>
             </div>
             <section class="data">
-             
+
                 <div class="cont">
 
                 </div>
@@ -96,8 +83,8 @@
                 <script type="text/javascript"
                     src="https://www.freevisitorcounters.com/en/home/counter/836229/t/3"></script>
             </div> -->
-        
-       
+
+
         </footer>
 
     </div>
@@ -129,5 +116,21 @@
 
 </template>
 
+<script defer>
+    console.log(window);
+    if ('serviceWorker' in navigator) {
+      
+            navigator.serviceWorker.register('sw.js')
+                .then((registration) => {
+                    console.log(`service worker registered succesfully ${registration}`)
+                })
+                .catch((err) => {
+                    console.log(`Error registring ${err}`)
+                })
+    
+    } else {
+        console.log(`Service worker is not supported in this browser.`)
+    }
+</script>
 
 </html>
