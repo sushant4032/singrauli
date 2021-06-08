@@ -164,10 +164,10 @@ th {
 	padding: 10px 20px;
 	text-align: center;
 	font-weight: bold;
-	background: RGB(76, 176, 80);
-	/* background: rgb(0, 151, 136); */
+	/* background: RGB(76, 176, 80); */
+	background: rgb(0, 151, 136);
 	color: white;
-	border: 1px solid rgb(100, 200, 150);
+	border: 1px solid;
 	text-align: center;
 }
 

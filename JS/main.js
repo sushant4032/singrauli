@@ -207,8 +207,8 @@ function display(d) {
         }
     }
 
-    // document.querySelector('.covrow').innerHTML = `<td>COVISHIELD</td><td> ${td.cov.a18.d1} / ${td.cov.a18.d2}<td>${td.cov.a45.d1} / ${td.cov.a45.d2}`;
-    // document.querySelector('.coxrow').innerHTML = `<td>COVAXIN</td><td> ${td.cox.a18.d1} / ${td.cox.a18.d2}<td>${td.cox.a45.d1} / ${td.cox.a45.d2}`;
+    document.querySelector('.covrow').innerHTML = `<td>COVISHIELD</td><td> ${td.cov.a18.d1} / ${td.cov.a18.d2}<td>${td.cov.a45.d1} / ${td.cov.a45.d2}`;
+    document.querySelector('.coxrow').innerHTML = `<td>COVAXIN</td><td> ${td.cox.a18.d1} / ${td.cox.a18.d2}<td>${td.cox.a45.d1} / ${td.cox.a45.d2}`;
 }
 
 
