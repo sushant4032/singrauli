@@ -5,10 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="JS/main.js?v8" defer></script>
-    <link rel="stylesheet" href="CSS/style.css?v8">
+    <script src="JS/main.js?v9" defer></script>
+    <link rel="stylesheet" href="CSS/style.css?v9">
     <title>Singrauli</title>
-    <link rel="manifest" href="manifest.json?v8">
+
+
+    <link rel="icon" type="image/png" href="/favicon.svg" />
+    <link rel="manifest" href="manifest.json?v9">
+    <meta name="theme-color" content="purple">
 </head>
 
 <body>
@@ -41,43 +45,18 @@
                 <div class="cont">
 
                 </div>
-                <!-- <div class="tabl">
-                    <table>
-                        <tr>
-                            <th colspan=3> TOTAL DOSES (D1/D2)</th>
-                        </tr>
-                
-                        <tr>
-                            <th></th>
-                            <th>18+ age</th>
-                            <th>45+ age</th>
-                        </tr>
-                        <tr class="covrow">
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr class="coxrow">
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </table>
-                
-                </div> -->
+
             </section>
         </main>
         <footer>
             <p class="data-source">Realtime vaccine data is from the Cowin server</p>
             </hr>
-            <p class="copy">Developer &copy; Sushant Tiwari, 2021</p>
+            <p class="copy">Developer : Sushant Tiwari</p>
             <p class="contact">cil.sushant@gmail.com</p>
-            <!-- <div class="visit-counter">
-                <a href='https://bachelorthesiswritingservice.com/'>Counter</a>
-                <script type='text/javascript'
-                    src='https://www.freevisitorcounters.com/auth.php?id=a1403a838e2c708b26f00e0e5660f93821e95d91'></script>
-                <script type="text/javascript"
-                    src="https://www.freevisitorcounters.com/en/home/counter/836229/t/3"></script>
-            </div> -->
-
+            <div class="counter">
+                <a href=""><img
+                        src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fsushant4032.github.io%2Fsingrauli%2F&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" /></a>
+            </div>
 
         </footer>
 
@@ -86,15 +65,15 @@
 <template id="tcard">
 
     <div class="card">
-        <div class="centr">
-            <h3 class="name"></h3>
+        <div class="card-head">
+            <p class="name"></p>
             <p class="add"></p>
         </div>
-        <div class="info">
+        <div class="card-info">
             <p class="type"></p>
             <p class="age"></p>
         </div>
-        <div>
+        <div class="card-body">
             <table>
                 <tr>
                     <td>Dose 1</td>
@@ -107,21 +86,20 @@
             </table>
         </div>
     </div>
-
 </template>
 
 <script defer>
     console.log(window);
     if ('serviceWorker' in navigator) {
-      
-            navigator.serviceWorker.register('sw.js')
-                .then((registration) => {
-                    console.log(`service worker registered succesfully ${registration}`)
-                })
-                .catch((err) => {
-                    console.log(`Error registring ${err}`)
-                })
-    
+
+        navigator.serviceWorker.register('sw.js')
+            .then((registration) => {
+                console.log(`service worker registered succesfully ${registration}`)
+            })
+            .catch((err) => {
+                console.log(`Error registring ${err}`)
+            })
+
     } else {
         console.log(`Service worker is not supported in this browser.`)
     }

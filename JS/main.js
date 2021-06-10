@@ -118,25 +118,16 @@ function refresh() {
         })
         d = t;
     }
-    // var t = d.sort(function (a, b) {
-    //     return b.available_capacity - a.available_capacity;
-    // });
-    // d = t;
+    var t = d.sort(function (a, b) {
+        return b.available_capacity - a.available_capacity;
+    });
+    d = t;
     display(d);
 
 }
 
 function display(d) {
-    // var td = {
-    //     cov: {
-    //         a18: { d1: 0, d2: 0 },
-    //         a45: { d1: 0, d2: 0 }
-    //     },
-    //     cox: {
-    //         a18: { d1: 0, d2: 0 },
-    //         a45: { d1: 0, d2: 0 }
-    //     },
-    // };
+
 
     if (d.length > 0) {
         d.forEach(e => {
@@ -165,34 +156,9 @@ function display(d) {
 
             if (e.available_capacity > 0) {
                 clone.querySelector('.card').classList.add('green');
-
             }
 
             var k = cont.appendChild(clone);
-
-
-
-            // if (e.vaccine == 'COVISHIELD') {
-            //     if (e.min_age_limit == 18) {
-
-            //         td.cov.a18.d1 += e.available_capacity_dose1;
-            //         td.cov.a18.d2 += e.available_capacity_dose2;
-            //     }
-            //     else {
-            //         td.cov.a45.d1 += e.available_capacity_dose1;
-            //         td.cov.a45.d2 += e.available_capacity_dose2;
-            //     }
-            // }
-            // else {
-            //     if (e.min_age_limit == 18) {
-            //         td.cox.a18.d1 += e.available_capacity_dose1;
-            //         td.cox.a18.d2 += e.available_capacity_dose2;
-            //     }
-            //     else {
-            //         td.cox.a45.d1 += e.available_capacity_dose1;
-            //         td.cox.a45.d2 += e.available_capacity_dose2;
-            //     }
-            // }
         })
         showdata();
     }
@@ -200,7 +166,7 @@ function display(d) {
 
 
         if (filters.covonly || filters.coxonly || filters.plus18 || filters.plus45) {
-            nodata("NO SLOTS !");
+            nodata("NOT AVAILABLE!");
         }
         else if (date.getTime() < new Date().getTime()) {
             nodata("DATA EXPIRED !");
@@ -210,8 +176,7 @@ function display(d) {
         }
     }
 
-    // document.querySelector('.covrow').innerHTML = `<td>COVISHIELD</td><td> ${td.cov.a18.d1} / ${td.cov.a18.d2}<td>${td.cov.a45.d1} / ${td.cov.a45.d2}`;
-    // document.querySelector('.coxrow').innerHTML = `<td>COVAXIN</td><td> ${td.cox.a18.d1} / ${td.cox.a18.d2}<td>${td.cox.a45.d1} / ${td.cox.a45.d2}`;
+    // visitCount();
 }
 
 
@@ -238,4 +203,12 @@ function update() {
     if (diff > 1) {
 
     }
+}
+
+function visitCount() {
+    fetch('https://www.sushanttiwari.in/dch/serv/log_visit.php',{method:'cors'}).then(
+        resonse => {
+            console.log(response);
+        }
+    )
 }

@@ -1,17 +1,22 @@
 {
-    "short_name": "Installable App",
-    "name": "Simple Installable App",
+    "short_name": "Singrauli",
+    "name": "Singrauli Vaccine Tracker",
     "icons": [
         {
-            "src": "logo64.png",
+            "src": "icon-64.png",
             "sizes": "64x64",
               "type": "image/png"
         },
+        {
+            "src": "icon-128.png",
+            "type": "image/png",
+            "sizes": "128x128"
+        },
       
         {
-            "src": "logo512.png",
+            "src": "icon-256.png",
             "type": "image/png",
-            "sizes": "512x512"
+            "sizes": "256x256"
         }
     ],
     "start_url": "/singrauli/",
@@ -19,3 +24,4 @@
     "theme_color": "#000000",
     "background_color": "#ffffff"
 }
+ 

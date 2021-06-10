@@ -11,46 +11,44 @@ html {
 }
 
 body {
-	/* background:red; */
-	padding: 2px;
 	color: #666;
 	max-width: 1200px;
 	margin: auto;
 }
 
 .frame {
-	/* background:yellow; */
-	min-height: 100vh;
+	min-height: 95vh;
 	display: flex;
 	flex-direction: column;
 }
+
 header {
 	height: 70px;
 	margin-bottom: 20px;
 	background: purple;
 	color: white;
-	font-weight: bold;
 	font-size: 1.5rem;
-	border-radius: 10px 10px 0px 0px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+	box-shadow: 0 4px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
 }
 .controls {
-	/* background:yellow; */
-	margin-bottom: 10px;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	/* background: yellow; */
+	margin-bottom: 20px;
 }
 
 main {
 	flex-grow: 1;
+	/* background: yellow; */
 }
+
 footer {
-	/* height: 150px; */
-	padding: 20px;
+	margin: 2px;
+	padding: 10px;
 	background: purple;
 	color: white;
 	border-radius: 0px 0px 10px 10px;
@@ -58,7 +56,6 @@ footer {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
 	position: relative;
 }
 footer > p {
@@ -67,12 +64,11 @@ footer > p {
 
 .date-selector {
 	height: 50px;
-	max-width: 300px;
+	max-width: 320px;
 	margin: 0px auto;
 	border-radius: 25px;
 	margin-bottom: 20px;
 	font-size: 1.5rem;
-	/* background:yellow; */
 	border: 1px solid lightgrey;
 	display: flex;
 	justify-content: space-between;
@@ -88,7 +84,7 @@ footer > p {
 
 .prev,
 .next {
-	width: 70px;
+	width: 65px;
 	font-size: 2rem;
 	font-weight: bold;
 	cursor: pointer;
@@ -97,24 +93,13 @@ footer > p {
 }
 
 .filter {
-	/* background:red; */
 	display: flex;
 	flex-wrap: wrap;
-	/* width:auto;
-	overflow: auto; */
 	justify-content: center;
 	align-items: center;
 }
 
-.filter fieldset {
-	width: 100%;
-	padding: 10px;
-	display: flex;
-}
-
 .filter p {
-	/* min-width: 80px; */
-	display: block;
 	margin: 5px;
 	padding: 12px;
 	border: 1px solid lightgrey;
@@ -129,83 +114,44 @@ footer > p {
 	background: yellow;
 }
 
-.data {
-	transition: display 0.5s ease-in-out;
-}
-
 table {
 	border-collapse: collapse;
 }
 
-.tabl {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border-radius: 10px;
-	overflow: hidden;
-	margin-bottom: 20px;
-}
-
-.tabl table {
-	width: 100%;
-}
-
-.tabl td {
-	padding: 10px 20px;
-	border: 1px solid rgb(220, 220, 220);
-	text-align: center;
-}
-
-.tabl tr:nth-child(even) {
-	background: rgb(241, 241, 241);
-}
-
-th {
-	padding: 10px 20px;
-	text-align: center;
-	font-weight: bold;
-	/* background: RGB(76, 176, 80); */
-	background: rgb(0, 151, 136);
-	color: white;
-	border: 1px solid;
-	text-align: center;
-}
-
-.tabl tr td:first-child {
-	/* background:yellow; */
-	font-weight: bold;
-}
-
-.cont {
-	/* background:blue; */
-}
-
 .card {
-	border: 1px solid lightgrey;
-	/* width: 100%; */
-	margin: 30px 10px;
-	color: #777;
-	font-weight: bold;
+	margin: 0px 10px 30px 10px;
 	border-radius: 5px;
 	overflow: hidden;
 	box-shadow: 0 4px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
-	/* background: rgb(235, 235, 235); */
-	/* background:rgb(241,241,241); */
-	/* border: 1px solid rgb(0, 151, 136); */
-	/* background:RGB(63, 81, 181); */
-	/* color: white; */
-	/* background:#9c28b1; */
+	background: #e7e7e7;
 }
 
-.card > div {
-	padding: 5px;
+.card-head {
+	padding: 5px 10px;
+	margin-bottom: 10px;
+	background: #555;
+	background: #2d3035;
+	background: #525761;
+	
+	color: white;
 }
 
-.card .info {
+.card-head .name {
+	font-size: 1.25rem;
+}
+
+.card-info {
+	margin:5px;
+	padding: 5px 10px;
 	display: flex;
 	justify-content: space-between;
-	color: crimson;
-	/* background:rgb(230,230,230); */
+	font-size: 1.4rem;
+	background: #dbdada;
+	border-radius:20px;
+}
+
+.card-body {
+	padding: 10px;
 }
 
 .card table {
@@ -214,30 +160,25 @@ th {
 }
 
 .card td {
-	border: 1px solid rgba(220, 220, 220, 0.8);
 	padding: 5px;
 	min-width: 30px;
 	text-align: center;
-	/* background: rgba(255, 255, 255, 0.1); */
-}
-.centr {
-	/* color: white; */
-	background: rgba(220,220,220);
-	border-bottom: 1px solid lightgray;
+	border: 1px solid #bbb;
+	font-size: 1.2rem;
 }
 
-.card-plus45.card-COVISHIELD .centr {
-	background: #4cb050;
+.card-COVISHIELD .type {
+	color: teal;
 }
 
-.card-plus45.card-COVAXIN .centr {
-	background: #2196f3;
+.card-COVAXIN .type {
+	color: rgb(173, 185, 6);
 }
-.card-plus18.card-COVISHIELD .centr {
-	background: #3f51b5;
+.card-plus18 .age {
+	color: orangered;
 }
-.card-plus18.card-COVAXIN .centr {
-	background: #fe5722;
+.card-plus45 .age {
+	color: dodgerblue;
 }
 
 .add {
@@ -258,17 +199,11 @@ th {
 }
 
 .type {
-	font-size: 1.25rem;
-	padding: 5px;
 	font-weight: 800;
-	/* color: brown; */
 }
 
 .age {
-	font-size: 1.25rem;
-	padding: 5px;
 	font-weight: 800;
-	/* color: brown; */
 }
 
 .avl {
@@ -311,11 +246,8 @@ th {
 	transition: all 5s ease-in-out;
 }
 
-.visit-counter {
+.counter {
+	/* background:yellow; */
+	padding:10px;
 }
-/* .avl{ 
-    font-weight: bold;
-    background:RGB(76, 176, 80);
-    color:white;
-    border:1px solid lightgrey;
-} */
+
