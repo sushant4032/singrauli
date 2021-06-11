@@ -17,7 +17,7 @@ body {
 }
 
 .frame {
-	min-height: 115vh;
+	min-height: 120vh;
 	display: flex;
 	flex-direction: column;
 	user-select:none;
@@ -121,7 +121,7 @@ table {
 
 .card {
 	margin: 0px 10px 30px 10px;
-	border-radius: 5px;
+	border-radius: 15px;
 	overflow: hidden;
 	box-shadow: 0 4px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
 	background: #e7e7e7;
@@ -225,7 +225,7 @@ table {
 
 .card .avl {
 	font-weight: bold;
-	background: yellow;
+	background: rgba(255, 255, 0, 0.733);
 }
 
 .data-source {

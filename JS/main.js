@@ -6,6 +6,8 @@ var fdate = document.querySelector('.date');
 var gdata = "";
 var today = new Date();
 var date = today;
+date.setDate(date.getDate() + 1);
+console.log(date);
 
 
 var filters = {
@@ -169,7 +171,7 @@ function display(d) {
             nodata("NOT AVAILABLE!");
         }
         else if (date.getTime() < new Date().getTime()) {
-            nodata("OLD DATA REMOVED !");
+            nodata("DATA REMOVED !");
         }
         else {
             nodata("DATA NOT RELEASED YET !");
