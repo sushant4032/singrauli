@@ -212,3 +212,7 @@ function visitCount() {
         }
     )
 }
+
+document.querySelector('.contact-me').addEventListener('click', () => {
+    document.querySelector('.contact-form').classList.toggle('hidden');
+})

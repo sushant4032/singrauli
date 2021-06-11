@@ -1,7 +1,7 @@
 * {
 	margin: 0;
 	padding: 0;
-	user-select: none;
+
 	box-sizing: border-box;
 }
 
@@ -20,6 +20,7 @@ body {
 	min-height: 115vh;
 	display: flex;
 	flex-direction: column;
+	user-select:none;
 }
 
 header {
@@ -48,7 +49,7 @@ main {
 
 footer {
 	margin: 2px;
-	padding: 10px;
+	padding-top: 10px;
 	background: purple;
 	color: white;
 	border-radius: 0px 0px 10px 10px;
@@ -56,7 +57,7 @@ footer {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	position: relative;
+	user-select:text;
 }
 footer > p {
 	text-align: center;
@@ -132,7 +133,7 @@ table {
 	background: #555;
 	background: #2d3035;
 	background: #525761;
-	
+
 	color: white;
 }
 
@@ -141,13 +142,13 @@ table {
 }
 
 .card-info {
-	margin:5px;
+	margin: 5px;
 	padding: 5px 10px;
 	display: flex;
 	justify-content: space-between;
 	font-size: 1.4rem;
 	background: #dbdada;
-	border-radius:20px;
+	border-radius: 20px;
 }
 
 .card-body {
@@ -168,18 +169,18 @@ table {
 	background: rgb(221, 220, 220);
 }
 
-.first-text{
+.first-text {
 	border-bottom: 1px solid lightgrey;
 	border-right: 1px solid lightgrey;
 }
-.first{
+.first {
 	border-bottom: 1px solid lightgrey;
 }
-.second-text{
-	background:rgb(189, 189, 189);
+.second-text {
+	background: rgb(189, 189, 189);
 	border-right: 1px solid lightgrey;
 }
-.second{
+.second {
 	background: #7c3333;
 }
 
@@ -232,16 +233,7 @@ table {
 	font-size: 1rem;
 }
 
-.copy {
-	border-top: 1px solid grey;
-	padding: 10px;
-	width: 80%;
-	font-size: 0.9rem;
-}
 
-.contact {
-	font-size: 0.75rem;
-}
 .nodata,
 .fetching {
 	height: 100px;
@@ -264,6 +256,23 @@ table {
 
 .counter {
 	/* background:yellow; */
-	padding:10px;
+	padding: 10px;
+}
+
+.contact{
+	width:100%;
+	padding:5px 0px;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	/* background:yellow; */
+	border:1px solid rgb(160, 1, 160);
+	font-size:0.75rem;
+}
+.contact-me{
+	padding:5px 10px;
+	border-radius:5px;
+	background:rgb(248, 248, 139);
+	text-decoration: none;
 }
 
