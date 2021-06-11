@@ -155,16 +155,32 @@ table {
 }
 
 .card table {
-	border-radius: 3px;
+	border-radius: 5px;
 	overflow: hidden;
 }
 
 .card td {
-	padding: 5px;
+	padding: 5px 15px;
 	min-width: 30px;
 	text-align: center;
-	border: 1px solid #bbb;
+	/* border: 1px solid #bbb; */
 	font-size: 1.2rem;
+	background: rgb(221, 220, 220);
+}
+
+.first-text{
+	border-bottom: 1px solid lightgrey;
+	border-right: 1px solid lightgrey;
+}
+.first{
+	border-bottom: 1px solid lightgrey;
+}
+.second-text{
+	background:rgb(189, 189, 189);
+	border-right: 1px solid lightgrey;
+}
+.second{
+	background: #7c3333;
 }
 
 .card-COVISHIELD .type {
@@ -206,7 +222,7 @@ table {
 	font-weight: 800;
 }
 
-.avl {
+.card .avl {
 	font-weight: bold;
 	background: yellow;
 }
