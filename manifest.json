@@ -1,27 +1,31 @@
 {
-    "short_name": "Singrauli",
-    "name": "Singrauli Vaccine Tracker",
-    "icons": [
-        {
-            "src": "icon-64.png",
-            "sizes": "64x64",
-              "type": "image/png"
-        },
-        {
-            "src": "icon-128.png",
-            "type": "image/png",
-            "sizes": "128x128"
-        },
-      
-        {
-            "src": "icon-256.png",
-            "type": "image/png",
-            "sizes": "256x256"
-        }
-    ],
-    "start_url": "/singrauli/",
-    "display": "standalone",
-    "theme_color": "#000000",
-    "background_color": "#ffffff"
+	"short_name": "Singrauli",
+	"name": "Singrauli Vaccine Tracker",
+	"icons": [
+		{
+			"src": "RES/Icons/icon-64.png",
+			"sizes": "64x64",
+			"type": "image/png"
+		},
+		{
+			"src": "RES/Icons/icon-128.png",
+			"type": "image/png",
+			"sizes": "128x128"
+		},
+
+		{
+			"src": "RES/Icons/icon-256.png",
+			"type": "image/png",
+			"sizes": "256x256"
+		},
+		{
+			"src": "RES/Icons/icon-512.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		}
+	],
+	"start_url": "/singrauli/",
+	"display": "standalone",
+	"theme_color": "#000000",
+	"background_color": "#ffffff"
 }
- 
