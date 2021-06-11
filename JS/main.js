@@ -169,7 +169,7 @@ function display(d) {
             nodata("NOT AVAILABLE!");
         }
         else if (date.getTime() < new Date().getTime()) {
-            nodata("DATA EXPIRED !");
+            nodata("OLD DATA REMOVED !");
         }
         else {
             nodata("DATA NOT RELEASED YET !");
