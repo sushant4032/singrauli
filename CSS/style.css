@@ -17,7 +17,7 @@ body {
 }
 
 .frame {
-	min-height: 95vh;
+	min-height: 115vh;
 	display: flex;
 	flex-direction: column;
 }
