@@ -37,7 +37,7 @@ async function getData(date) {
     // fdate.value = `${y}-${m}-${d}`;
     var ds = `${d}-${m}-${y}`;
     fdate.innerText = ds;
-    var str = 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=380&date=' + ds;
+    var str = 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=330&date=' + ds;
     console.log(str);
     var d = await fetch(str);
     var e = await d.json();
