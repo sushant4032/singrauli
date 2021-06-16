@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="JS/main.js?v14" defer></script>
-    <link rel="stylesheet" href="CSS/style.css?v14">
+    <script src="JS/main.js?v15" defer></script>
+    <link rel="stylesheet" href="CSS/style.css?v15">
     <title>Singrauli Vaccine Tracker</title>
 
 
     <link rel="icon" type="image/png" href="RES/Icons/icon-64.png" />
-    <link rel="manifest" href="manifest.json?v14">
+    <link rel="manifest" href="manifest.json?v15">
     <meta name="theme-color" content="purple">
 </head>
 
@@ -45,6 +45,9 @@
                 <div class="cont">
 
                 </div>
+                <div class="cont2">
+
+                </div>
 
             </section>
         </main>
@@ -52,40 +55,55 @@
             <p class="data-source">Realtime vaccine data is from the Cowin server</p>
             <div class="contact">
                 <p class="copy">Developer : Sushant Tiwari</p>
-             <a class="contact-me" href="https://docs.google.com/forms/d/e/1FAIpQLSfN9F8oVEfVRugcPfn3-aa1FoZyyX6UDtTZF30O83tX2ziKow/viewform?usp=sf_link">Contact </a>
+                <a class="contact-me"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfN9F8oVEfVRugcPfn3-aa1FoZyyX6UDtTZF30O83tX2ziKow/viewform?usp=sf_link">Contact
+                </a>
             </div>
             <div class="counter">
                 <a href="#page-head"><img
                         src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fsushant4032.github.io%2Fsingrauli%2F&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" /></a>
             </div>
-        
+
 
         </footer>
 
     </div>
 </body>
-<template id="tcard">
 
+<template id="tcard2">
     <div class="card">
         <div class="card-head">
             <p class="name"></p>
-            <p class="add"></p>
         </div>
-        <div class="card-info">
-            <p class="type"></p>
-            <p class="age"></p>
-        </div>
-        <div class="card-body">
-            <table>
-                <tr>
-                    <td class="first-text">Dose 1</td>
-                    <td class="first">50</td>
-                </tr>
-                <tr>
-                    <td class="second-text">Dose 2</td>
-                    <td class="second">20</td>
-                </tr>
-            </table>
+        <div class="doses">
+            <div class="age-group">
+                <div class="y18 hidden">
+                    <p class="age age18">age 18+</p>
+                    <p class="type">PLACEHOLDER</p>
+                    <div class="d1">
+                        <p class="d1t">D1:</p>
+                        <p class="d1q"></p>
+                    </div>
+                    <div class="d2">
+                        <p class="d2t">D2:</p>
+                        <p class="d2q"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="age-group">
+                <div class="y45 hidden">
+                    <p class="age age45">age 45+</p>
+                    <p class="type">PLACEHOLDER</p>
+                    <div class="d1">
+                        <p class="d1t">D1:</p>
+                        <p class="d1q"></p>
+                    </div>
+                    <div class="d2">
+                        <p class="d2t">D2:</p>
+                        <p class="d2q"></p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
