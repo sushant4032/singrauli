@@ -224,7 +224,7 @@ function refresh() {
                 nodata("DATA REMOVED !");
             }
             else {
-                nodata("ALLOTEMENT NOT DONE YET !");
+                nodata("DATA NOT RELEASED YET !");
             }
         }
         // visitCount();
