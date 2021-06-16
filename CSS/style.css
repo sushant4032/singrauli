@@ -162,6 +162,7 @@ table {
 }
 .age45 {
 	color: indigo;
+	color:dodgerblue;
 }
 
 .y18,
@@ -190,8 +191,8 @@ p.type {
 }
 
 .COVISHIELD {
+	background: dodgerblue;
 	background: indigo;
-	/* background: indigo; */
 	color: white;
 }
 
@@ -216,7 +217,7 @@ p.type {
 .d1t,
 .d2t {
 	padding: 1px;
-	font-size:0.95rem;
+	font-size: 0.95rem;
 	/* font-weight: bold; */
 }
 .d1q,
