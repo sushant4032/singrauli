@@ -21,12 +21,12 @@ body {
 	display: flex;
 	flex-direction: column;
 	user-select: none;
-	background: rgb(255, 255, 225);
+	/* background: rgb(255, 255, 225); */
 }
 
 header {
 	height: 50px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	background: purple;
 	/* background: steelblue; */
 	color: white;
@@ -41,7 +41,6 @@ header {
 	justify-content: center;
 	align-items: center;
 	/* background: yellow; */
-	margin-bottom: 20px;
 }
 
 main {
@@ -69,9 +68,9 @@ footer > p {
 .date-selector {
 	height: 50px;
 	max-width: 320px;
-	margin: 0px auto;
+	margin: auto;
 	border-radius: 25px;
-	margin-bottom: 20px;
+	margin-bottom: 15px;
 	font-size: 1.5rem;
 	border: 1px solid lightgrey;
 	display: flex;
@@ -98,6 +97,7 @@ footer > p {
 }
 
 .filter {
+	padding:5px;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -105,8 +105,8 @@ footer > p {
 }
 
 .filter p {
-	margin: 5px;
-	padding: 10px 12px;
+	margin: 0px 5px;
+	padding: 8px 12px;
 	border: 1px solid lightgrey;
 	border-radius: 5px;
 	overflow: hidden;
@@ -122,14 +122,17 @@ table {
 }
 
 .card {
-	margin: 0px 10px 30px 10px;
+	margin: 15px;
 	border-radius: 15px;
 	overflow: hidden;
 	background: white;
 	box-shadow: 0 4px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+	background: rgb(255, 255, 255);
+
 }
 
 .card-head {
+	/* margin:0px 20px; */
 	padding: 7px 15px;
 	background: #3d4149;
 	color: white;
@@ -159,10 +162,10 @@ table {
 
 .age18 {
 	color: orangered;
+	color:red;
 }
 .age45 {
-	color: indigo;
-	color:dodgerblue;
+	color:indigo;
 }
 
 .y18,
@@ -191,13 +194,12 @@ p.type {
 }
 
 .COVISHIELD {
-	background: dodgerblue;
-	background: indigo;
+	background:dodgerblue;
 	color: white;
 }
 
 .COVAXIN {
-	background: orangered;
+	background:orangered;
 	color: white;
 }
 
