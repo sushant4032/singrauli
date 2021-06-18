@@ -67,10 +67,10 @@ document.querySelector('.next').addEventListener('click', async e => {
 function refresh() {
     var input = global_data;
 
-    input.forEach((x, i) => {
-        var k = Math.round(100 * Math.random())
-        if (k % 5 == 0) x.vaccine = 'COVAXIN';
-    })
+    // input.forEach((x, i) => {
+    //     var k = Math.round(100 * Math.random())
+    //     if (k % 5 == 0) x.vaccine = 'COVAXIN';
+    // })
 
     if (filters.plus18) {
         var input = input.filter(x => {
