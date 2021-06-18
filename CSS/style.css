@@ -160,14 +160,14 @@ footer > p {
 }
 
 .age18 {
-	color: crimson;
+	color:grey;
 }
 .age45 {
-	color: dodgerblue;
+	color:grey;
 }
 .COVISHIELD {
 	color: white;
-	background: teal;
+	background: dodgerblue;
 }
 
 .COVAXIN {

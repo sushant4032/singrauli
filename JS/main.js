@@ -38,8 +38,10 @@ async function getData(date) {
     fdate.innerText = dateString;
     var str = 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=330&date=' + dateString;
     var res = await fetch(str);
-    var data = await res.json();
-    return data.sessions;
+    var jsonData = await res.json();
+    var data = jsonData.sessions;
+    doses = countDoses(data);
+    return data;
 }
 
 function countDoses(data) {
@@ -70,7 +72,7 @@ function refresh() {
     // input.forEach((x, i) => {
     //     var k = Math.round(100 * Math.random())
     //     if (k % 5 == 0) x.vaccine = 'COVAXIN';
-    // })
+    // }) 
 
     if (filters.plus18) {
         var input = input.filter(x => {
@@ -194,14 +196,18 @@ function display(d) {
         showData();
     }
     else {
-        if (filter_applied) {
+        console.log(doses);
+        if (doses > 0) {
             nodata("NOT AVAILABLE !");
         }
-        else if (date.getTime() < new Date().getTime()) {
-            nodata("NO DATA !");
-        }
         else {
-            nodata("DATA NOT RELEASED YET !");
+            var future = date.getTime() > new Date().getTime();
+            if (future) {
+                nodata("DATA NOT RELEASED YET !");
+            }
+            else {
+                nodata("NO DATA !");
+            }
         }
     }
 }
