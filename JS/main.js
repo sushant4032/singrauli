@@ -25,6 +25,16 @@ async function srart() {
         data = await getData(date);
         doses = countDoses(data);
     }
+    if (doses == 0) {
+        date.setDate(date.getDate() + 1);
+        data = await getData(date);
+        doses = countDoses(data);
+    }
+    if (doses == 0) {
+        date.setDate(date.getDate() + 1);
+        data = await getData(date);
+        doses = countDoses(data);
+    }
     global_data = data;
     refresh();
 }
