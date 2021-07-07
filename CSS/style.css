@@ -10,7 +10,7 @@ html {
 }
 
 body {
-	max-width: 1200px;
+	/* max-width: 1200px; */
 	margin: auto;
 }
 
@@ -151,6 +151,10 @@ footer > p {
 
 .age-group {
 	width: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
 }
 
 .age {
@@ -223,7 +227,7 @@ p.type {
 }
 .avl {
 	font-weight: bold;
-	background: yellow;
+	background: rgba(255, 255, 0, 0.493);
 	color: #444;
 	border: 1px solid lightgrey;
 }

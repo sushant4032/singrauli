@@ -35,6 +35,11 @@ async function srart() {
         data = await getData(date);
         doses = countDoses(data);
     }
+    if (doses == 0) {
+        date.setDate(date.getDate() - 3);
+        data = await getData(date);
+        doses = countDoses(data);
+    }
     global_data = data;
     refresh();
 }
@@ -63,7 +68,8 @@ function countDoses(data) {
 }
 
 document.querySelector('.prev').addEventListener('click', async e => {
-    if (date.getTime() >= today.getTime()) {
+    console.log(date.getDate(), new Date().getDate())
+    if (date.getDate() > new Date().getDate()) {
         date.setDate(date.getDate() - 1);
         global_data = await getData(date);
         refresh();
