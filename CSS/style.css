@@ -81,14 +81,15 @@ header {
 
 .filter {
 	display: flex;
-	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
+	width:100%;
 }
 
 .filter button {
-	margin-right: 10px;
-	padding: 10px;
+	margin:3px;
+	padding: 7px 0px;
+	flex-grow:1;
 	border: 1px solid lightgrey;
 	border-radius: 4px;
 	overflow: hidden;
@@ -143,6 +144,11 @@ footer > p {
 	font-size: 1.25rem;
 }
 
+.card-head .address{
+	color:rgba(255, 255, 255, 0.5);
+	font-size:0.8rem;
+}
+
 .doses {
 	margin: 10px 0px;
 	display: flex;
@@ -150,7 +156,8 @@ footer > p {
 }
 
 .age-group {
-	width: 50%;
+	/* width: 50%; */
+	flex-grow:1;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
@@ -158,16 +165,17 @@ footer > p {
 }
 
 .age {
-	width: 80%;
+	/* width: 80%; */
 	font-size: 1.4rem;
 	font-weight: bold;
+
 }
 
 .age18 {
-	color:grey;
+	color: grey;
 }
 .age45 {
-	color:grey;
+	color: grey;
 }
 .COVISHIELD {
 	color: white;
@@ -206,7 +214,7 @@ p.type {
 
 .d1,
 .d2 {
-	width: 75px;
+	width: 100%;
 	margin-bottom: 2px;
 	display: flex;
 	justify-content: space-between;
@@ -246,13 +254,11 @@ p.type {
 	padding: 10px;
 	font-size: 1rem;
 }
-
 .collapsed {
 	height: 0px;
 	overflow: hidden;
 	transition: all 5s ease-in-out;
 }
-
 .contact {
 	width: 80%;
 	padding: 5px 0px;
@@ -269,12 +275,10 @@ p.type {
 	background: rgb(248, 248, 139);
 	text-decoration: none;
 }
-
 .filter .set {
 	background: yellow;
 	color: #444;
 }
-
 .hidden {
 	display: none;
 }

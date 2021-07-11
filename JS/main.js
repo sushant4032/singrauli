@@ -11,8 +11,11 @@ var filter_applied = false;
 var filters = {
     covonly: false,
     coxonly: false,
-    plus18: false,
-    plus45: false
+
+    // plus18: false,
+    // plus45: false
+    first: false,
+    second: false,
 }
 
 srart();
@@ -110,6 +113,16 @@ function refresh() {
             return x.vaccine == 'COVAXIN' && x.available_capacity > 0;
         })
     }
+    if (filters.first) {
+        var input = input.filter(x => {
+            return x.available_capacity_dose1 > 0;
+        })
+    }
+    if (filters.second) {
+        var input = input.filter(x => {
+            return x.available_capacity_dose2 > 0;
+        })
+    }
 
     var input = input.sort(function (a, b) {
         return b.available_capacity - a.available_capacity;
@@ -126,12 +139,14 @@ function refresh() {
         var avl = x.available_capacity;
         var d1 = x.available_capacity_dose1;
         var d2 = x.available_capacity_dose2;
+        var allAge = x.allow_all_age ?? false;
+        var address = 'PIN' + ': ' + x.pincode;
 
         var obj = {
             'type': type,
             'd1': d1,
             'd2': d2,
-            'total': d1 + d2
+            'total': d1 + d2,
         }
 
         var found = false;
@@ -153,7 +168,9 @@ function refresh() {
         if (!found) {
             var k = {
                 'id': id,
-                'name': name
+                'name': name,
+                'address': address,
+                'allAge': allAge
             }
             if (age == 18) {
                 k.y18 = obj;
@@ -176,6 +193,7 @@ function display(d) {
         d.forEach(e => {
             var clone = document.querySelector('#tcard').content.cloneNode(true);
             var name = clone.querySelector('.name');
+            var address = clone.querySelector('.address');
 
             var y18 = clone.querySelector('.y18');
             var y18type = clone.querySelector('.y18 .type');
@@ -188,6 +206,8 @@ function display(d) {
             var y45d2 = clone.querySelector('.y45 .d2q');
 
             name.innerHTML = e.name;
+            address.innerText = e.address;
+
             if (e.y18) {
                 y18.classList.remove('hidden');
                 y18type.innerHTML = e.y18.type;
@@ -206,7 +226,10 @@ function display(d) {
                 y45d2.innerHTML = e.y45.d2;
                 if (e.y45.d2) y45d2.classList.add('avl');
             }
-
+            if (e.allAge) {
+                clone.querySelector('.above-45').classList.add('hidden');
+                clone.querySelector('.age18').innerText = "Age: Any 18+"
+            }
             var k = cont2.appendChild(clone);
         })
         showData();
@@ -219,10 +242,10 @@ function display(d) {
         else {
             var future = date.getTime() > new Date().getTime();
             if (future) {
-                nodata("DATA NOT RELEASED YET !");
+                nodata("SLOTS NOT LISTED !");
             }
             else {
-                nodata("NO DATA !");
+                nodata("SLOTS NOT AVAILABLE !");
             }
         }
     }
@@ -274,8 +297,16 @@ function applyFilter(f) {
         filters.coxonly = !filters.coxonly;
         filters.covonly = false;
     }
+    else if (f == 'first') {
+        filters.first = !filters.first;
+        filters.second = false;
+    }
+    else if (f == 'second') {
+        filters.second = !filters.second;
+        filters.first = false;
+    }
 
-    if (filters.covonly || filters.coxonly || filters.plus18 || filters.plus45) { filter_applied = true; }
+    if (filters.covonly || filters.coxonly || filters.plus18 || filters.plus45 || filters.first || filters.second) { filter_applied = true; }
     else { filter_applied = false; }
 
     Object.keys(filters).forEach(x => {
